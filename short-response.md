@@ -27,6 +27,9 @@ What are **controllers** and **middleware** in Express? What are each responsibl
 How are **query strings** and **route parameters** similar? How are they different? In your answer, provide an example of when you would use each.
 
 **Your answer here**:
+**Query strings** are the parts of an **url** that come after the `?` and is used for filtering or searching.
+
+**Route parameters** are the parts of an **url path** that are defined with `:`.
 
 ---
 

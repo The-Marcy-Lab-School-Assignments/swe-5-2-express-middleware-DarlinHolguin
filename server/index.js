@@ -18,35 +18,63 @@ const quotes = [
   { id: 10, author: 'Leonardo da Vinci', topic: 'art', text: 'Simplicity is the ultimate sophistication.' },
 ];
 
+
 // TODO: Define middleware here
+const logRoutes = (req, res, next) => {
+  // 1. logRoutes — logs the HTTP method, URL, and timestamp for every request, then calls next()
+  console.log(req.method, req.url, new Date().toLocaleString())
+  next()
 
-// 1. logRoutes — logs the HTTP method, URL, and timestamp for every request, then calls next()
-
+}
 // 2. express.static() — generates middleware that serves files from the frontend/ folder
 //    Use path.join(__dirname, '../frontend') to construct the absolute path
 
 // TODO: Register middleware with app.use() before the controllers
-
+app.use(logRoutes)
+app.use(express.static(path.join(__dirname, '../frontend')))
 
 
 // TODO: Define controllers here
 
 // listQuotes — sends all quotes as JSON
-//   If the request includes a ?topic= query string, send only quotes with a matching topic
+const listQuotes = (req, res) => {
+  //   If the request includes a ?topic= query string, send only quotes with a matching topic
+  if (req.query.topic) {
+    const filterByTopic = quotes.filter((quote) => quote.topic === req.query.topic)
+    return res.json(filterByTopic)
+  }
+  res.json(quotes)
+}
 
 // getQuote — sends a single quote whose id matches req.params.id
-//   If no matching quote is found, respond with 404 and { error: 'No quote with id <id>' }
+const getQuote = (req, res) => {
+  const id = Number(req.params.id)
+  const quoteById = quotes.find((quote) => quote.id === id)
+  //   If no matching quote is found, respond with 404 and { error: 'No quote with id <id>' }
+  if (!quoteById) {
+    return res.status(404).json({ error: `No quote with id ${id}` })
+  }
+  res.json(quoteById)
+}
 
 
 
 // TODO: Register endpoints here
 
 // GET /api/quotes
+app.get('/api/quotes', listQuotes);
 // GET /api/quotes/:id
+app.get('/api/quotes/:id', getQuote)
 
 
 
 // TODO: Add a catch-all fallback that responds with 404 and { error: 'Not found: <url>' }
+app.use((req, res) => {
+  res.status(404).json({ error: `Not found: ${req.url}` })
+})
+
+
+
 // Use app.use() and place it after all other routes
 
 

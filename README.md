@@ -66,26 +66,26 @@ This assignment has 17 requirements:
 
 **Server Setup (3 pts)**
 
-- [ ] `express` is imported with `require('express')` and an app is created with `express()`
-- [ ] The app listens on port `8080`
-- [ ] The server runs without errors
+- [x] `express` is imported with `require('express')` and an app is created with `express()`
+- [x] The app listens on port `8080`
+- [x] The server runs without errors
 
 **Middleware (5 pts)**
 
-- [ ] A `logRoutes` middleware function logs the HTTP method, URL, and timestamp for every request
-- [ ] `logRoutes` calls `next()` so the request continues to the next handler
-- [ ] `logRoutes` is registered with `app.use()` before the route controllers
-- [ ] `express.static()` is used to serve files from the `frontend/` directory using an absolute path
-- [ ] Visiting `http://localhost:8080` loads the Quote Gallery in the browser
+- [x] A `logRoutes` middleware function logs the HTTP method, URL, and timestamp for every request
+- [x] `logRoutes` calls `next()` so the request continues to the next handler
+- [x] `logRoutes` is registered with `app.use()` before the route controllers
+- [x] `express.static()` is used to serve files from the `frontend/` directory using an absolute path
+- [x] Visiting `http://localhost:8080` loads the Quote Gallery in the browser
 
 **Endpoints and Controllers (6 pts)**
 
-- [ ] `GET /api/quotes` responds with all 10 quotes as a JSON array
-- [ ] `GET /api/quotes?topic=science` (or any valid topic) returns only matching quotes
-- [ ] `GET /api/quotes/:id` responds with the single quote whose `id` matches
-- [ ] `GET /api/quotes/:id` responds with status `404` and a JSON error when the id has no match
-- [ ] All controllers are defined as named arrow functions (not anonymous inline arrow functions)
-- [ ] A catch-all fallback responds with status `404` and a JSON error for all unmatched routes
+- [x] `GET /api/quotes` responds with all 10 quotes as a JSON array
+- [x] `GET /api/quotes?topic=science` (or any valid topic) returns only matching quotes
+- [x] `GET /api/quotes/:id` responds with the single quote whose `id` matches
+- [x] `GET /api/quotes/:id` responds with status `404` and a JSON error when the id has no match
+- [x] All controllers are defined as named arrow functions (not anonymous inline arrow functions)
+- [x] A catch-all fallback responds with status `404` and a JSON error for all unmatched routes
 
 **Deployment (3 pts)**
 
@@ -191,7 +191,7 @@ git commit -m "Complete express and middleware assignment"
 git push
 ```
 
-Then deploy on Render using [these instructions](https://marcylabschool.gitbook.io/marcy-lab-school-docs/mod-5-servers/5-middleware-static-assets#deploying-web-server-to-render). 
+Then deploy on Render using [these instructions](https://marcylabschool.gitbook.io/marcy-lab-school-docs/mod-5-servers/5-middleware-static-assets#deploying-web-server-to-render).
 
 In a few minutes your server will be live. Visit the Render URL — you should see the full Quote Gallery just like on localhost.
 
