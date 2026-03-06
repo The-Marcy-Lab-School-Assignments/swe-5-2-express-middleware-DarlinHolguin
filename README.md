@@ -89,9 +89,9 @@ This assignment has 17 requirements:
 
 **Deployment (3 pts)**
 
-- [ ] Server code is pushed to a GitHub repository
-- [ ] App is deployed on Render as a Web Service
-- [ ] The deployed app serves both the frontend and the API correctly at the Render URL
+- [x] Server code is pushed to a GitHub repository
+- [x] App is deployed on Render as a Web Service
+- [x] The deployed app serves both the frontend and the API correctly at the Render URL
 
 ---
 
