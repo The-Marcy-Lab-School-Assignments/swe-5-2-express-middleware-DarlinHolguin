@@ -181,6 +181,8 @@ After registering the static middleware, visit `http://localhost:8080`. Because 
 
 ### Step 6 — Deploy to Render
 
+#### **Deployed Link>>>>>>>https://swe-5-2-express-middleware-darlinholguin-278o.onrender.com/<<<<<<<<**
+
 > ✅ You will know that you've completed this step when you can share a live Render URL with your instructor and the Quote Gallery loads and works correctly.
 
 **Push your code to GitHub first:**
