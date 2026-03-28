@@ -57,8 +57,6 @@ const getQuote = (req, res) => {
   res.json(quoteById)
 }
 
-
-
 // TODO: Register endpoints here
 
 // GET /api/quotes
